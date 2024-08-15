@@ -82,9 +82,9 @@ export default function App() {
   const renderItem = ({ item }) => (
     <View style={styles.item}>
       <Text style={styles.Loans}>{item.text}</Text>
-      <Button color='green' title="Edit" onPress={() => openEditModal(item)} />
+      <Button color='#007BFF' title="Edit" onPress={() => openEditModal(item)} />
       <View style={styles.space} />
-      <Button color='red' title="Delete" onPress={() => handleDeleteTodo(item.key)} />
+      <Button color='#FF5733' title="Delete" onPress={() => handleDeleteTodo(item.key)} />
     </View>
   );
 
@@ -113,7 +113,7 @@ export default function App() {
             <View style={styles.modalView}>
               <TextInput
                 style={styles.input}
-                placeholder="Edit todo"
+                placeholder="Edit Loan Type"
                 value={newText}
                 onChangeText={setNewText}
               />
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
   },
   button: {
-    backgroundColor: 'coral',
+    backgroundColor: '#007BFF',
     padding: 10,
     marginVertical: 5,
     borderRadius: 5,
