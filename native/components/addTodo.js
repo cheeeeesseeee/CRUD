@@ -13,7 +13,7 @@ export default function AddTodo({ onAdd }) {
         try {
             const todo = { text: newTodo};  
             console.log("Sending payload:", JSON.stringify(todo));
-            const response = await fetch('http://localhost:5189/todo', {  
+            const response = await fetch('http://10.0.2.2:5189/todo', {  
                 method: 'POST',  
                 headers: {
                     'Accept': 'application/json',

@@ -14,7 +14,7 @@ export default function App() {
   useEffect(() => {
     const fetchTodos = async () => {
       try {
-        const response = await fetch('http://localhost:5189/todo', {
+        const response = await fetch('http://10.0.2.2:5189/todo', {
           headers: {
             'Accept': 'application/json',
           },
@@ -49,7 +49,7 @@ export default function App() {
 
   const handleUpdateTodo = async (key, text) => {
     try {
-      const response = await fetch(`http://localhost:5189/todo/${key}`, {
+      const response = await fetch(`http://10.0.2.2:5189/todo/${key}`, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',
@@ -91,7 +91,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header />
-      <ScrollView style={styles.content}>
+      <View style={styles.content}>
         <AddTodo onAdd={handleAddTodo} />
         <FlatList
           data={todos}
@@ -135,7 +135,7 @@ export default function App() {
             </View>
           </View>
         </Modal>
-      </ScrollView>
+      </View>
     </View>
   );
 }
@@ -146,7 +146,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
-    padding: 40,
+    paddingTop: 20,
+    paddingLeft: 40,
+    paddingRight: 40,
+    flex: 1,
   },
   space: {
     width: 10, 

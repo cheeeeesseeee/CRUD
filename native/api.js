@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5189/todo'; 
+const API_URL = 'http://10.0.2.2:5189/todo'; 
 
 export const deleteTodo = async (key) => {
   try {
