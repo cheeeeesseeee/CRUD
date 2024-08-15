@@ -5,14 +5,13 @@ export default function AddTodo({ onAdd }) {
     const [newTodo, setNewTodo] = useState('');
     const [error, setError] = useState(null);
 
-    const changeHandler = (val) =>{
+    const changeHandler = (val) => {
         setNewTodo(val);
     }
 
-    const handleAddTodo = async (e) => {
-        e.preventDefault();
+    const handleAddTodo = async () => {
         try {
-            const todo = { Text: newTodo };  
+            const todo = { text: newTodo};  
             console.log("Sending payload:", JSON.stringify(todo));
             const response = await fetch('http://localhost:5189/todo', {  
                 method: 'POST',  
@@ -22,29 +21,30 @@ export default function AddTodo({ onAdd }) {
                 },
                 body: JSON.stringify(todo),  
             });
-
+    
             if (!response.ok) {
                 throw new Error('Failed to add todo');
             }
-
+    
             const addedTodo = await response.json(); 
-            onAdd(addedTodo); 
-            setNewTodo(''); 
+            onAdd(addedTodo);  
+            setNewTodo('');  
         } catch (error) {
             console.error('Add todo error:', error);
             setError(error.message);
         }
     };
+    
       
     return (
         <View>
             <TextInput 
                 style={styles.input}
                 value={newTodo}
-                placeholder='New todo'
+                placeholder='New Loan Type'
                 onChangeText={changeHandler}
             />
-            <Button onPress={handleAddTodo} title='Add Todo' color='coral' />
+            <Button onPress={handleAddTodo} title='Add Loan Type' color='#556B2F' />
             {error && <Text style={styles.errorText}>{error}</Text>}
         </View>
     );

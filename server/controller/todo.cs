@@ -11,9 +11,9 @@ public class TodoController : ControllerBase
     // Initialize the Todos list
     private static readonly List<Todo> Todos =
     [
-        new Todo { Text = "buy coffee", Key = "1" },
-        new Todo { Text = "create an app", Key = "2" },
-        new Todo { Text = "play on the switch", Key = "3" }
+        new Todo { Text = "Personal Loans", Key = "1" },
+        new Todo { Text = "Unsecured Loans", Key = "2" },
+        new Todo { Text = "Student Loans", Key = "3" }
     ];
 
     // GET: /todo
@@ -27,6 +27,7 @@ public class TodoController : ControllerBase
     [HttpPost]
     public ActionResult AddTodo([FromBody] Todo newTodo)
     {
+        Console.WriteLine("Received payload: " + JsonConvert.SerializeObject(newTodo));
         if (newTodo == null || string.IsNullOrEmpty(newTodo.Text))
         {
             Console.WriteLine("Invalid todo received: " + JsonConvert.SerializeObject(newTodo));
@@ -43,17 +44,17 @@ public class TodoController : ControllerBase
     [HttpPut("{key}")]
     public ActionResult UpdateTodo(string key, [FromBody] Todo updatedTodo)
     {
-        // Find the todo item by key
         var todo = Todos.FirstOrDefault(t => t.Key == key);
         if (todo == null)
         {
-            return NotFound();
+            return NotFound(new { message = $"Todo with key {key} not found." });
         }
 
-        // Update the text of the todo item
         todo.Text = updatedTodo.Text;
-        return NoContent();
+        return Ok(todo);
     }
+
+
 
     // DELETE: /todo/{key}
     [HttpDelete("{key}")]

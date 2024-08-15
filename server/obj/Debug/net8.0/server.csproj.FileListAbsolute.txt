@@ -32,3 +32,4 @@ C:\Users\coral\OneDrive\Desktop\React-Native\server\obj\Debug\net8.0\server.pdb
 C:\Users\coral\OneDrive\Desktop\React-Native\server\obj\Debug\net8.0\server.genruntimeconfig.cache
 C:\Users\coral\OneDrive\Desktop\React-Native\server\obj\Debug\net8.0\ref\server.dll
 C:\Users\coral\OneDrive\Desktop\React-Native\server\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\coral\OneDrive\Desktop\React-Native\server\obj\Debug\net8.0\server.sourcelink.json

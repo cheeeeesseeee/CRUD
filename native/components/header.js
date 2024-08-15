@@ -5,7 +5,7 @@ export default function header () {
     return (
         <View style={styles.header}>
             <Text style={styles.title}>
-                My Todos
+                Loan Types
             </Text>
         </View>
     )
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     header: {
         height: 80,
         paddingTop: 38,
-        backgroundColor: 'coral'
+        backgroundColor: '#556B2F'
     },
     title: {
         textAlign: 'center',
