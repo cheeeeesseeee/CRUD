@@ -121,7 +121,7 @@ export default function App() {
                 style={styles.button}
                 onPress={() => handleUpdateTodo(editingTodo.key, newText)}
               >
-                <Text style={styles.buttonText}>Update Todo</Text>
+                <Text style={styles.buttonText}>Update Loan Type</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.button, styles.buttonClose]}
