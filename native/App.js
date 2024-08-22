@@ -4,7 +4,7 @@ import Header from './components/header';
 import AddTodo from './components/addTodo';
 import LoanTypesItem from './components/loanTypes';
 import EditLoanTypesModal from './components/editLoanTypesModal';
-import { fetchTodos, deleteTodo, updateTodo, addTodo } from './api';
+import { fetchItems, deleteLoanType, updateLoanType, addLoanType } from './api';
 
 export default function App() {
   const [todos, setTodos] = useState([]);
@@ -14,7 +14,7 @@ export default function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchTodos();
+      const data = await fetchItems();
       setTodos(data);
     };
     fetchData();
@@ -24,7 +24,7 @@ export default function App() {
     const newTodo = { text: todo.text, key: todo.key || Math.random().toString() };
     
     try {
-      const savedTodo = await addTodo(newTodo);
+      const savedTodo = await addLoanType(newTodo);
       setTodos([...todos, savedTodo]);
     } catch (error) {
       console.error('Add todo error:', error);
@@ -44,7 +44,7 @@ export default function App() {
           text: "Delete",
           onPress: async () => {
             try {
-              await deleteTodo(key);
+              await deleteLoanType(key);
               setTodos(prevTodos => prevTodos.filter(todo => todo.key !== key));
             } catch (error) {
               console.error('Delete error:', error);
@@ -57,11 +57,9 @@ export default function App() {
     );
   };
 
-  
-
   const handleUpdateTodo = async (key, text) => {
     try {
-      const updatedTodo = await updateTodo(key, text);
+      const updatedTodo = await updateLoanType(key, text);
       setTodos((prevTodos) =>
         prevTodos.map((todo) => (todo.key === key ? updatedTodo : todo))
       );

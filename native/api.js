@@ -1,4 +1,4 @@
-export const fetchTodos = async () => {
+export const fetchItems = async () => {
   try {
     const response = await fetch('http://10.0.2.2:5189/todo', {
       headers: {
@@ -15,7 +15,7 @@ export const fetchTodos = async () => {
   }
 };
 
-export const addTodo = async (todo) => {
+export const addLoanType = async (todo) => {
   try {
     const response = await fetch('http://10.0.2.2:5189/todo', {
       method: 'POST',
@@ -37,7 +37,7 @@ export const addTodo = async (todo) => {
   }
 };
 
-export const deleteTodo = async (key) => {
+export const deleteLoanType = async (key) => {
   try {
     const response = await fetch(`http://10.0.2.2:5189/todo/${key}`, {
       method: 'DELETE',
@@ -51,7 +51,7 @@ export const deleteTodo = async (key) => {
   }
 };
 
-export const updateTodo = async (key, text) => {
+export const updateLoanType = async (key, text) => {
   try {
     const response = await fetch(`http://10.0.2.2:5189/todo/${key}`, {
       method: 'PUT',
