@@ -13,7 +13,7 @@ export default function EditTodoModal({ visible, onClose, todo, newText, setNewT
         <View style={styles.modalView}>
           <TextInput
             style={styles.input}
-            placeholder="Edit Todo"
+            placeholder="Edit Loan Type"
             value={newText}
             onChangeText={setNewText}
           />
@@ -21,7 +21,7 @@ export default function EditTodoModal({ visible, onClose, todo, newText, setNewT
             style={styles.button}
             onPress={() => onUpdate(todo.key, newText)}
           >
-            <Text style={styles.buttonText}>Update Todo</Text>
+            <Text style={styles.buttonText}>Update Loan Type</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.button, styles.buttonClose]}
