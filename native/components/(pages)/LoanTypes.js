@@ -27,14 +27,14 @@ export default function LoanTypes() {
       const savedTodo = await addLoanType(newTodo);
       setTodos([...todos, savedTodo]);
     } catch (error) {
-      console.error('Add todo error:', error);
+      console.error('Add loan type error:', error);
     }
   };
 
   const handleDeleteTodo = async (key) => {
     Alert.alert(
       "Delete Confirmation",
-      "Are you sure you want to delete this todo?",
+      "Are you sure you want to delete this loan type?",
       [
         {
           text: "Cancel",
@@ -66,7 +66,7 @@ export default function LoanTypes() {
       setEditingTodo(null);
       setModalVisible(false);
     } catch (error) {
-      console.error('Update todo error:', error);
+      console.error('Update loan type error:', error);
     }
   };
   
@@ -78,7 +78,6 @@ export default function LoanTypes() {
 
   return (
     <View style={styles.container}>
-      <Header />
       <View style={styles.content}>
         <AddTodo onAdd={handleAddTodo} />
         <FlatList
